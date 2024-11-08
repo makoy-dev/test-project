@@ -9,12 +9,12 @@ class AccountController extends Controller {
 
     public function signin() {
         $email = $this->f3->get('POST.email');
-        $password = $this->f3->get('POST.password');
-
+        $password = $this->f3->get('POST.password');        
+        
         $v = new Valitron\Validator(array('Email' => $email, 'Password' => $password));
         $v->rule('required', ['Email', 'Password']);
         $v->rule('email', 'Email');
-
+        
         if ($v->validate()) {
             $account = new Account($this->db);
             $pwd = md5($password);

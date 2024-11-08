@@ -12,12 +12,14 @@ V::lang('en');
 
 $f3 = Base::instance();
 
+$f3->set('DEBUG',3);
 $f3->config('config/config.ini');
 $f3->config('config/routes.ini');
 $f3->set('UPLOADS','ui/uploads/');
+$f3->set('errors', []);
 
-//$f3->set('ONERROR',function($f3){
+// $f3->set('ONERROR',function($f3){
 //  echo Template::instance()->render('404.html');
-//});
+// });
 
 $f3->run();

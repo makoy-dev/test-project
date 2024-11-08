@@ -3,32 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>{{ @site }} | Log in</title>
+    <title><?= ($site) ?> | Log in</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <script src="{{ @BASE }}/ui/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="<?= ($BASE) ?>/ui/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 <!--    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
 
     <!-- dataTables scripts -->
-    <script src="{{ @BASE }}/ui/plugins/datatables/dataTables.bootstrap.js"></script>
-    <script src="{{ @BASE }}/ui/plugins/datatables/jquery.dataTables.js"></script>
-    <script src="{{ @BASE }}/ui/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
-    <script src="{{ @BASE }}/ui/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+    <script src="<?= ($BASE) ?>/ui/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="<?= ($BASE) ?>/ui/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="<?= ($BASE) ?>/ui/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+    <script src="<?= ($BASE) ?>/ui/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
 
     <!-- Bootstrap 3.3.4 -->
-    <link href="{{ @BASE }}/ui/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= ($BASE) ?>/ui/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="{{ @BASE }}/ui/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= ($BASE) ?>/ui/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
-    <link href="{{ @BASE }}/ui/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
+    <link href="<?= ($BASE) ?>/ui/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
     <!-- dataTables styles -->
-    <link rel="stylesheet" href="{{ @BASE }}/ui/plugins/datatables/jquery.dataTables.css">
-    <link rel="stylesheet" href="{{ @BASE }}/ui/plugins/datatables/jquery.dataTables_themeroller.css">
-    <link rel="stylesheet" href="{{ @BASE }}/ui/plugins/datatables/extensions/TableTools/css/dataTables.tableTools.min.css">
-    <link rel="stylesheet" href="{{ @BASE }}/ui/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css">
+    <link rel="stylesheet" href="<?= ($BASE) ?>/ui/plugins/datatables/jquery.dataTables.css">
+    <link rel="stylesheet" href="<?= ($BASE) ?>/ui/plugins/datatables/jquery.dataTables_themeroller.css">
+    <link rel="stylesheet" href="<?= ($BASE) ?>/ui/plugins/datatables/extensions/TableTools/css/dataTables.tableTools.min.css">
+    <link rel="stylesheet" href="<?= ($BASE) ?>/ui/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,24 +41,24 @@
 <body class="login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ @BASE }}/"><b>App</b>NAME</a>
+            <a href="<?= ($BASE) ?>/"><b>App</b>NAME</a>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">Please Login</p>
             <p class="login-box-msg">The password is <code>"password"</code></p>
-            <check if="{{ @errors!=null }}">
+            <?php if ($errors!=null): ?>
                 <div class="alert alert-danger alert-dismissable">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     <h4><i class="icon fa fa-ban"></i> Error(s)!</h4>
-                    <repeat group="{{ @errors }}" value="{{ @error }}">
-                        <li>{{ @error[0] }}</li>
-                    </repeat>
+                    <?php foreach (($errors?:[]) as $error): ?>
+                        <li><?= ($error[0]) ?></li>
+                    <?php endforeach; ?>
                 </div>
-            </check>
-            <form action="{{@BASE}}/account/signin" method="post">
+            <?php endif; ?>
+            <form action="<?= ($BASE) ?>/account/signin" method="post">
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" name="email" placeholder="Email" value="{{ @email }}" />
+                    <input type="email" class="form-control" name="email" placeholder="Email" value="<?= ($email) ?>" />
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
@@ -107,11 +107,11 @@
 
 
     <!-- jQuery 2.1.4 -->
-    <script src="{{ @BASE }}/ui/plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="<?= ($BASE) ?>/ui/plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
     <!-- Bootstrap 3.3.2 JS -->
-    <script src="{{ @BASE }}/ui/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="<?= ($BASE) ?>/ui/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- iCheck -->
-    <script src="{{ @BASE }}/ui/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+    <script src="<?= ($BASE) ?>/ui/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
 
 </body>
 
