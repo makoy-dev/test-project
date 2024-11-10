@@ -618,7 +618,7 @@ function _init() {
       } //When the source has been loaded
 
     }, options);
-    console.log('test')
+    
     //The overlay
     var overlay = $('<div class="overlay"><div class="fa fa-refresh fa-spin"></div></div>');
 

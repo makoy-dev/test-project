@@ -110,13 +110,13 @@
                                     <div class="card-tools">
                                         Report Name:
                                         <select class="form-control" id="sel_report" style="width: 250px;"
-                                                required> </select><br>
+                                                required></select><br>
                                         Report Period:
                                         <select class="form-control" id="sel_date" style="width: 250px;"
-                                                required> </select><br>
+                                                required></select><br>
                                         <span id="admin_customer">Customer:
                                     <select class="form-control" id="sel_customer"
-                                            style="width: 250px;"> </select></span><br>
+                                            style="width: 250px;"></select></span><br>
                                         <button type="button" class="btn btn-primary btn-sm" onclick="GetReport()">
                                             View Report
                                         </button>
